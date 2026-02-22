@@ -16,10 +16,7 @@ const setDnsServers = (servers) => {
 
   try {
     dns.setServers(servers);
-    console.log(`Using DNS servers: ${servers.join(", ")}`);
-  } catch (err) {
-    console.log("Failed to set DNS servers:", err.message);
-  }
+  } catch (err) {}
 };
 
 const connectDB = async () => {
@@ -35,7 +32,6 @@ const connectDB = async () => {
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (err) {
     if (err.message.includes("querySrv ECONNREFUSED")) {
-      console.log("SRV lookup failed. Retrying with custom DNS servers...");
       setDnsServers(parseDnsServers());
 
       try {
