@@ -5,6 +5,7 @@ function mapDoc(doc) {
   return {
     title: doc.title,
     description: doc.description,
+    imageUrl: doc.imageUrl || "",
     id: doc._id
   };
 }
