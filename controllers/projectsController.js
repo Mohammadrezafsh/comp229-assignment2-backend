@@ -6,6 +6,7 @@ function mapDoc(doc) {
     title: doc.title,
     completion: doc.completion,
     description: doc.description,
+    imageUrl: doc.imageUrl || "",
     id: doc._id,
   };
 }
