@@ -11,6 +11,7 @@ const referencesRoutes = require("./routes/referencesRoutes");
 const projectsRoutes = require("./routes/projectsRoutes");
 const servicesRoutes = require("./routes/servicesRoutes");
 const usersRoutes = require("./routes/usersRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -24,6 +25,7 @@ app.use("/api/references", referencesRoutes);
 app.use("/api/projects", projectsRoutes);
 app.use("/api/services", servicesRoutes);
 app.use("/api/users", usersRoutes);
+app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
   res.json({ success: true, message: "Portfolio Backend API running" });
